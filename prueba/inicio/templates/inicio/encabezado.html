@@ -1,0 +1,19 @@
+<html lang="Es">
+<head>
+    <title> {% block titulo %} {% endblock %}</title>
+</head>
+
+<body>
+    <!--MENU-->
+    <a href= "{% url 'Principal' %}"> Home </a>
+    <a href= "{% url 'Contacto' %}"> Contacto </a>
+    <a href= "{% url 'Formulario' %}"> Formulario </a>
+
+    <!--CONTENIDO-->
+    {% block contenido %} <!--Template Tag-->
+    <!--Sirve para indicar la colocacion de un bloque de contenido a traves de la variable content-->
+    {% endblock %}
+
+</body>
+
+</html>

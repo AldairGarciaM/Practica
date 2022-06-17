@@ -60,22 +60,13 @@
 
 		<!-- Barra de menú -->
 		<div class="sidebar">
-
-        <div class="user-menu dropdown">
-            <a href="#">
-                <img src="{% block imagenes %} {% endblock %}">
-                <div class="user-info">
-                    {% block texto %}  {% endblock %} 
-                </div>
-            </a>
-        </div>
-
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
 				<ul class="navigation">
-                    <li><a href= "{% url 'Principal' %}"> Home </a></li>
-                    <li><a href= "{% url 'Formulario' %}"> Formulario </a></li>
-                    <li><a href= "{% url 'Contacto' %}"> Contacto </a></li>
+                    <a href= "{% url 'Principal' %}"> Home </a>
+                    <a href= "{% url 'Contacto' %}"> Contacto </a>
+                    <a href= "{% url 'Formulario' %}"> Formulario </a>
+                    <a href= "{% url 'Ejemplo' %}"> Ejemplo </a>
 				</ul>
 				<!-- /Fin menú -->
 			</div>

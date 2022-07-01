@@ -83,10 +83,34 @@
 		<!-- /sidebar -->
 	</div>
     
-    <!--CONTENIDO-->
-    {% block contenido %} <!--Template Tag-->
-    <!--Sirve para indicar la colocacion de un bloque de contenido a traves de la variable content-->
-    {% endblock %}
-    
+
+    <!-- Contenido Principal-->
+	<div class="page-content">
+
+        {% block cabeza %}
+        {% endblock %}
+
+        <!--Barra de navegacion-->
+        <div class="breadCrumb-line">
+            <ul class="breadCrumb">
+                <a href="{% url 'Principal' %}">
+                    {% if request.path == '/' %}
+                        Principal
+                    {% else %}
+                        Principal{{request.path}}
+                    {% endif %}
+                </a>
+            </ul>
+        </div>
+        <!--Fin de la barra de navegacion-->
+
+        <!--CONTENIDO-->
+        {% block contenido %} 
+        <!--Template Tag-->
+        <!--Sirve para indicar la colocacion de un bloque de contenido a traves de la variable content-->
+        {% endblock %}
+     
+    </div>
+    <!-- /Contenido Principal-->
 </body>
 </html>

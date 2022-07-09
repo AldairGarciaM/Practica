@@ -1,6 +1,8 @@
 from distutils.command.upload import upload
 from turtle import update
+from venv import create
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -21,3 +23,33 @@ class Alumnos(models.Model): #Definir la estructura de la tabla
 
     def __str__(self):
         return self.nombre
+
+
+class Comentarios(models.Model):
+    id= models.AutoField(primary_key=True, verbose_name="Llave")
+    alumno= models.ForeignKey(Alumnos, on_delete=models.CASCADE,verbose_name="Alumno")
+    created= models.DateTimeField(auto_now_add=True, verbose_name="Registros")
+    coment= RichTextField(verbose_name="Comentario")
+
+    class Meta:
+        verbose_name= "Comentario"
+        verbose_name_plural= "Comentarios"
+        ordering= ["-created"]
+
+    def __str__(self):
+        return self.coment
+
+
+class ComentarioContacto(models.Model):
+    id= models.AutoField(primary_key=True, verbose_name="Clave")
+    usuario= models.TextField(verbose_name="Usaurio")
+    mensaje= models.TextField(verbose_name="Comentario")
+    created= models.DateTimeField(auto_now_add=True, verbose_name="Registros")
+
+    class Meta: 
+        verbose_name= "Comentario Contacto"
+        verbose_name_plural= "Comentarios Contactos"
+        ordering= ["-created"]
+
+    def __str__(self):
+        return self.mensaje

@@ -28,6 +28,7 @@ urlpatterns = [
     path('registrar/', views_registros.registrar, name="Registrar"),
     path('comentarios/', views_registros.comentarios, name="Comentarios"),
     path('eliminarComentario/<int:id>/', views_registros.elimnarComentarios, name="Eliminar"),
+    path('consultarComentario/<int:id>/', views_registros.consultarComentario, name="consultaComentario" ),
     path('editarComentario/<int:id>/', views_registros.editarComentario, name="Editar" ),
 ]
 

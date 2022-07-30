@@ -30,6 +30,16 @@ urlpatterns = [
     path('eliminarComentario/<int:id>/', views_registros.elimnarComentarios, name="Eliminar"),
     path('consultarComentario/<int:id>/', views_registros.consultarComentario, name="consultaComentario" ),
     path('editarComentario/<int:id>/', views_registros.editarComentario, name="Editar" ),
+    path('consulta1/', views_registros.consulta1, name="Consulta1"),
+    path('consulta2/', views_registros.consulta2, name="Consulta2"),
+    path('consulta3/', views_registros.consulta3, name="Consulta3"),
+    path('consulta4/', views_registros.consulta4, name="Consulta4"),
+    path('consulta5/', views_registros.consulta5, name="Consulta5"),
+    path('consulta6/', views_registros.consulta6, name="Consulta6"),
+    path('consulta7/', views_registros.consulta7, name="Consulta7"),
+    path('subir/', views_registros.archivos, name="Subir"),
+    path('SQL/', views_registros.consultasSQL, name="sql"),
+    
 ]
 
 

@@ -1,0 +1,53 @@
+{% extends "inicio/encabezado.html" %}
+
+<!--Bloque de titulo-->
+{% block titulo %} 
+
+    Principal 
+
+{% endblock %}
+
+<!--Bloque de imagen-->
+{% block imagenes %}
+
+    {% load static %}
+    {% static 'inicio/images/home.png'%}
+
+{% endblock %}
+
+<!--Bloque de texto junto a la imagen-->
+{% block texto %}
+
+	<div class="user-info">
+		Principal <span>DSM</span>
+	</div>
+
+{% endblock %}
+
+{% block cabeza %} 
+	<div class="page-header">
+		<div class="page-title">
+			<h3>Alumnos
+		</div>
+	</div>
+{% endblock %}
+
+
+<!--Bloque de contenido-->
+{% block contenido %}
+
+<form method="GET">
+    Nombre:
+    <input type= "text" name="nombre">
+    <input type="submit" value="Buscar">
+    <h2>Resultado: {{ nombre|safe }} </h2>
+</form>
+
+
+<!--<script type="application/javascript">
+    var busqueda= new URLSearchParams(document.location.search)
+    if (busqueda.has("nombre")){
+        document.getElementById("resultado").innerHTML="Resultado: "+ busqueda.get("nombre")
+    }
+</script>-->
+{% endblock %}

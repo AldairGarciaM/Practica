@@ -77,14 +77,14 @@ WSGI_APPLICATION = 'prueba.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'ejemplo',
+        'NAME': BASE_DIR/ 'db.sqlite3',
     }
-}"""
+}
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ejemplo',
@@ -94,6 +94,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+"""
 
 
 # Password validation

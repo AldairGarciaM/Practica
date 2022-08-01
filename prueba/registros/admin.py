@@ -12,6 +12,9 @@ class AdministrarModelo(admin.ModelAdmin):
     search_fields= ('image', 'matricula', 'nombre', 'carrera', 'turno')
     date_hierarchy= 'created'
     list_filter= ('carrera', 'turno')
+    list_per_page= 2
+    list_display_links= ('matricula', 'nombre')
+    list_editable=('turno',)
 
     def get_readonly_field(self, request, obj=None):
         if request.user.groups.filter(name="Usuarios").exists():
